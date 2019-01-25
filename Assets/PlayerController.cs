@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -27,4 +28,27 @@ public class PlayerController : MonoBehaviour {
             gameManager.LightIsOn = !darkScreen.enabled;
         }
 	}
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Collision");
+        var collisionTag = collision.gameObject.tag;
+        if (collisionTag == "Enemy" || collisionTag == "Exit" || collisionTag == "Trap")
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Collision");
+        var collisionTag = collision.gameObject.tag;
+        if (collisionTag == "Enemy" || collisionTag == "Exit" || collisionTag == "Trap")
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+
+    }
+
 }
