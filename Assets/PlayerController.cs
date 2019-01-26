@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour {
         var collisionTag = collision.gameObject.tag;
         if (collisionTag == "Enemy" || collisionTag == "Exit" || collisionTag == "Trap")
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("Game");
         }
 
     }
