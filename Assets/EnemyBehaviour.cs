@@ -19,6 +19,8 @@ public class EnemyBehaviour : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         startPos = transform.position;
     }
 
