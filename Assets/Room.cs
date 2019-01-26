@@ -19,8 +19,8 @@ public class Room : MonoBehaviour {
 
     public void LoadRoom()
     {
-        Transform player = GameObject.FindWithTag("Player").transform;
-        player.position = playerSpawnLoc.position;
+        //Transform player = GameObject.FindWithTag("Player").transform;
+        //player.position = playerSpawnLoc.position;
 
         for (int i = 0; i < enemies.Count; i++)
         {

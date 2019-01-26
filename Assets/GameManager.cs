@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour {
         autoCamScript.SetTarget(room.transform);
         Debug.Log("Changed Rooms");
         room.LoadRoom();
+
     }
 
     public static void resetRoom(Room room)

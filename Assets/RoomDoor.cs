@@ -8,6 +8,7 @@ public class RoomDoor : MonoBehaviour {
 
     public Room currentRoom;
     public Room nextRoom;
+    public Transform nextSpawnPoint;
     //public UnityStandardAssets.Cameras.AutoCam autoCamScript;
 
     // Use this for initialization
@@ -31,6 +32,10 @@ public class RoomDoor : MonoBehaviour {
             GameManager.resetRoom(currentRoom);
             GameManager.changeRooms(nextRoom);
             Debug.Log("Door collision with Player");
+
+
+            Transform player = GameObject.FindWithTag("Player").transform;
+            player.position = nextSpawnPoint.position;
             //SceneManager.LoadScene("SampleScene");
         }
 
