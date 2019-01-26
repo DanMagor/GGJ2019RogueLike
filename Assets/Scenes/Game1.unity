@@ -1081,7 +1081,7 @@ Transform:
   - {fileID: 451563845}
   - {fileID: 1518602628}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1140933248
 MonoBehaviour:
@@ -1215,7 +1215,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4779432883441262, guid: 5730caa2295001a4681f5044e4c91389, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114456075783761176, guid: 5730caa2295001a4681f5044e4c91389,
         type: 2}
@@ -1563,6 +1563,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1797785239}
   - component: {fileID: 1797785238}
+  - component: {fileID: 1797785240}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -1629,6 +1630,24 @@ Transform:
   m_Father: {fileID: 865399660}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1797785240
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1797785237}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d8be2a5c0f118c04598ae90c04adbdcd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1937588010
 GameObject:
   m_ObjectHideFlags: 0
