@@ -12,12 +12,14 @@ public class EnemyBehaviour : MonoBehaviour
 
     public GameManager gameManager;
 
+    public Vector3 startPos;
+
 
 
     // Use this for initialization
     void Start()
     {
-
+        startPos = transform.position;
     }
 
     // Update is called once per frame
@@ -29,4 +31,5 @@ public class EnemyBehaviour : MonoBehaviour
         }
 
     }
+  
 }

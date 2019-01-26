@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class RoomDoor : MonoBehaviour {
 
-    public Transform nextRoom;
-    public UnityStandardAssets.Cameras.AutoCam autoCamScript;
+    public Room currentRoom;
+    public Room nextRoom;
+    //public UnityStandardAssets.Cameras.AutoCam autoCamScript;
 
     // Use this for initialization
     void Start () {
@@ -25,8 +26,10 @@ public class RoomDoor : MonoBehaviour {
         var collisionTag = collision.gameObject.tag;
         if (collisionTag == "Player")
         {
-            Debug.Log(autoCamScript.name);
-            autoCamScript.SetTarget(nextRoom);
+            //Debug.Log(autoCamScript.name);
+            //autoCamScript.SetTarget(nextRoom);
+            GameManager.resetRoom(currentRoom);
+            GameManager.changeRooms(nextRoom);
             Debug.Log("Door collision with Player");
             //SceneManager.LoadScene("SampleScene");
         }
