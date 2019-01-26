@@ -15,15 +15,11 @@ public class LanternSwitcher: MonoBehaviour {
 	}
 	
 	void Update () {
-		var angle = getRotationAngle();
-		const float RotationSpeed = 90.0f;
-		
-		if (angle > 5) 
-			transform.Rotate(RotationSpeed * Vector3.forward * Time.deltaTime);
-		else if (angle < -5) {
-			transform.Rotate(-RotationSpeed * Vector3.forward * Time.deltaTime);
-		}
-
+		var mousePos = Input.mousePosition;
+		var point = Camera.main.ScreenToWorldPoint(
+			new Vector3(mousePos.x, mousePos.y, 10));
+        flashlight.transform.LookAt(point);
+        
 		if (Input.GetKeyDown("space")) {
 			if(flashlight.activeSelf) {
 				flashlight.SetActive(false);
@@ -35,13 +31,6 @@ public class LanternSwitcher: MonoBehaviour {
 				darknessHighlight.SetActive(false);
 			}
 		}
-	}
-
-	private float getRotationAngle() {
-        var mousePos = Input.mousePosition;
-		var point = Camera.main.ScreenToWorldPoint(
-			new Vector3(mousePos.x, mousePos.y, 10));
-		return Vector3.SignedAngle(transform.right, point - transform.position, Vector3.forward);
 	}
 
 	private GameObject flashlight;
