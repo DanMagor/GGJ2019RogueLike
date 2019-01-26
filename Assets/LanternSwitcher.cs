@@ -40,6 +40,8 @@ public class LanternSwitcher : MonoBehaviour
             if ( batteryCharge <= 0 )
             {
                 flashlight.SetActive(false);
+                lightnessHighlight.SetActive(false);
+                darknessHighlight.SetActive(true);
             }
         } else
         {   
