@@ -4,12 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Fire
   - Trap
-  - Enemy
   - Exit
+  - Enemy
   - Door
-  - Key
   layers:
   - Default
   - TransparentFX
@@ -47,12 +45,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Invisible
+    uniqueID: 494577237
+    locked: 0
+  - name: Background
+    uniqueID: 2556979285
+    locked: 0
   - name: Trap
-    uniqueID: 3213508003
+    uniqueID: 3684720047
     locked: 0
-  - name: Trap2
-    uniqueID: 2861673843
+  - name: Player
+    uniqueID: 1386840821
     locked: 0
-  - name: Character
-    uniqueID: 2615903185
+  - name: Wall
+    uniqueID: 4063982851
     locked: 0

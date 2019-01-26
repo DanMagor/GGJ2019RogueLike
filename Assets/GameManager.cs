@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour {
     public Transform startingRoomSpawnpoint, ritualRoomSpawnpoint;
     public Room startingRoom, ritualRoom;
 
+    public static int itemsRemaining = 0;
+
     private void Awake()
     {
         rooms = new List<Room>();
@@ -17,7 +19,10 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        autoCamScript = Camera.main.GetComponent<UnityStandardAssets.Cameras.AutoCam>();
+        if (autoCamScript != null)
+        {
+            autoCamScript = Camera.main.GetComponent<UnityStandardAssets.Cameras.AutoCam>();
+        }
 	}
 	
 	// Update is called once per frame
@@ -26,8 +31,9 @@ public class GameManager : MonoBehaviour {
 	}
 
     public static void changeRooms( Room room ) {
-        autoCamScript.SetTarget(room.transform);
+        //autoCamScript.SetTarget(room.transform);
         //Debug.Log("Changed Rooms");
+        Camera.main.transform.position = room.transform.position + new Vector3(0,0,-10);
         room.LoadRoom();
 
     }
@@ -69,4 +75,13 @@ public class GameManager : MonoBehaviour {
             changeRooms(startingRoom);
         }
     }
+
+    public static void checkItems ()
+    {
+        if (itemsRemaining == 0)
+        {
+            Debug.Log("Collected all the items!");
+        }
+    }
+
 }
