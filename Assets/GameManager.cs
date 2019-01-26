@@ -26,8 +26,9 @@ public class GameManager : MonoBehaviour {
 	}
 
     public static void changeRooms( Room room ) {
-        autoCamScript.SetTarget(room.transform);
+        //autoCamScript.SetTarget(room.transform);
         //Debug.Log("Changed Rooms");
+        Camera.main.transform.position = room.transform.position + new Vector3(0,0,-10);
         room.LoadRoom();
 
     }
