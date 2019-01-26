@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    public bool LightIsOn = true;
     public static UnityStandardAssets.Cameras.AutoCam autoCamScript;
 
     // Use this for initialization

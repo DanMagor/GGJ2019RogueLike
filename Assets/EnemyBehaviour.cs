@@ -25,7 +25,7 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameManager.LightIsOn)
+        if (player.gameObject.GetComponent<LanternSwitcher>().LightIsOn())
         {
             transform.position += (player.transform.position - transform.position).normalized * speed * Time.deltaTime;
         }
