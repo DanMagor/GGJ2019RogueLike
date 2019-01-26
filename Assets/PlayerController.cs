@@ -54,7 +54,13 @@ public class PlayerController : MonoBehaviour {
         if (collisionTag == "Enemy" || collisionTag == "Exit" || collisionTag == "Trap")
         {
             //SceneManager.LoadScene("SampleScene");
-            SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex ) ;
+            //SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex ) ;
+            gameManager.respawn();
+        }
+
+        if (collision.gameObject.name == "Respawn Point")
+        {
+            GameManager.arriveRitualRoom();
         }
 
     }
