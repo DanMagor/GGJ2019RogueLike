@@ -8,6 +8,7 @@ TagManager:
   - Trap
   - Enemy
   - Exit
+  - Door
   layers:
   - Default
   - TransparentFX
