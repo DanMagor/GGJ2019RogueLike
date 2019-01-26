@@ -23,7 +23,7 @@ public class RoomDoor : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collision with Door");
+        //Debug.Log("Collision with Door");
         var collisionTag = collision.gameObject.tag;
         if (collisionTag == "Player")
         {
@@ -31,7 +31,7 @@ public class RoomDoor : MonoBehaviour {
             //autoCamScript.SetTarget(nextRoom);
             GameManager.resetRoom(currentRoom);
             GameManager.changeRooms(nextRoom);
-            Debug.Log("Door collision with Player");
+            //Debug.Log("Door collision with Player");
 
 
             Transform player = GameObject.FindWithTag("Player").transform;
