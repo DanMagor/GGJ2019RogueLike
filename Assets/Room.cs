@@ -9,7 +9,7 @@ public class Room : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        GameManager.rooms.Add( GetComponent<Room>() );
 	}
 	
 	// Update is called once per frame
@@ -25,7 +25,7 @@ public class Room : MonoBehaviour {
         for (int i = 0; i < enemies.Count; i++)
         {
             EnemyBehaviour enemy = enemies[i];
-            enemy.transform.position = enemy.startPos;
+            //enemy.transform.position = enemy.startPos;
             enemy.gameObject.SetActive(true);
         }
     }

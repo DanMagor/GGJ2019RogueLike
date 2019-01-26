@@ -17,7 +17,7 @@ public class EnemyBehaviour : MonoBehaviour
 
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         startPos = transform.position;
     }

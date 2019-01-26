@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Exit
   - Door
+  - Key
   layers:
   - Default
   - TransparentFX
@@ -48,6 +49,9 @@ TagManager:
     locked: 0
   - name: Trap
     uniqueID: 3213508003
+    locked: 0
+  - name: Trap2
+    uniqueID: 2861673843
     locked: 0
   - name: Character
     uniqueID: 2615903185

@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour {
 
     public Image darkScreen;
 
+    public Animator animator;
+
     [SerializeField]
     private GameManager gameManager;
 	// Use this for initialization
@@ -20,6 +22,7 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+
 		transform.position += new Vector3(speed * Time.deltaTime,0,0) * Input.GetAxis("Horizontal") +
                               new Vector3(0, speed * Time.deltaTime, 0) * Input.GetAxis("Vertical"); 
         if (Input.GetButtonDown("Jump"))
@@ -27,6 +30,9 @@ public class PlayerController : MonoBehaviour {
             darkScreen.enabled = !darkScreen.enabled;
             gameManager.LightIsOn = !darkScreen.enabled;
         }
+
+        animator.SetFloat("vSpeed", Input.GetAxis("Vertical"));
+        animator.SetFloat("hSpeed", Input.GetAxis("Horizontal"));
 	}
 
 
@@ -48,7 +54,13 @@ public class PlayerController : MonoBehaviour {
         if (collisionTag == "Enemy" || collisionTag == "Exit" || collisionTag == "Trap")
         {
             //SceneManager.LoadScene("SampleScene");
-            SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex ) ;
+            //SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex ) ;
+            gameManager.respawn();
+        }
+
+        if (collision.gameObject.name == "Respawn Point")
+        {
+            GameManager.arriveRitualRoom();
         }
 
     }
