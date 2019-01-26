@@ -45,6 +45,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Trap
+    uniqueID: 3684720047
+    locked: 0
   - name: Player
     uniqueID: 1386840821
+    locked: 0
+  - name: Wall
+    uniqueID: 4063982851
     locked: 0
