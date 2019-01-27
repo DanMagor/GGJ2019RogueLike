@@ -49,9 +49,8 @@ public class DireCorpseController : MonoBehaviour
     {
         var dir = player.transform.position - transform.position;
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, 100.0f, LayerMask.GetMask("Wall"));
-        return !hit;
-
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, 100.0f, LayerMask.GetMask("Wall", "Player"));
+        return hit && hit.transform.CompareTag("Player");
     }
 
     private Vector3 lastPlayerPosition;
