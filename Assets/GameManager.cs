@@ -34,6 +34,12 @@ public class GameManager : MonoBehaviour {
         //autoCamScript.SetTarget(room.transform);
         //Debug.Log("Changed Rooms");
         Camera.main.transform.position = room.transform.position + new Vector3(0,0,-10);
+        PlayerController player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        if (player.bringingObject)
+        {
+            player.bringingObject = false;
+            player.item = null;
+        }
         room.LoadRoom();
 
     }

@@ -17,6 +17,8 @@ public class PickableItem : MonoBehaviour {
         var collisionTag = collision.gameObject.tag;
         if (collisionTag == "Player")
         {
+            collision.gameObject.GetComponent<PlayerController>().bringingObject = true;
+            collision.gameObject.GetComponent<PlayerController>().item = this;
             Debug.Log("Collected the item: " + itemName);
             GameManager.itemsRemaining = GameManager.itemsRemaining - 1;
             GameManager.checkItems();

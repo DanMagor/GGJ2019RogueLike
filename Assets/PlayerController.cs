@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour {
 
     public Animator animator;
 
+
+    public bool bringingObject = false;
+    public PickableItem item = null;
+
     [SerializeField]
     private GameManager gameManager;
 	// Use this for initialization
@@ -20,6 +24,14 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        if (Input.GetAxis("Horizontal")!=0 || Input.GetAxis("Vertical") != 0)
+        {
+            GetComponent<AudioSource>().enabled = true;
+        }
+        else
+        {
+            GetComponent<AudioSource>().enabled = false;
+        }
 
 		transform.position += new Vector3(speed * Time.deltaTime,0,0) * Input.GetAxis("Horizontal") +
                               new Vector3(0, speed * Time.deltaTime, 0) * Input.GetAxis("Vertical"); 
@@ -28,17 +40,7 @@ public class PlayerController : MonoBehaviour {
         animator.SetFloat("hSpeed", Input.GetAxis("Horizontal"));
 	}
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Collision");
-        var collisionTag = collision.gameObject.tag;
-        if (collisionTag == "Enemy" || collisionTag == "Exit" || collisionTag == "Trap")
-        {
-            //SceneManager.LoadScene("SampleScene");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-    }
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -48,6 +50,13 @@ public class PlayerController : MonoBehaviour {
         {
             //SceneManager.LoadScene("SampleScene");
             //SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex ) ;
+            if (bringingObject)
+            {
+                GameManager.itemsRemaining += 1;
+                item.gameObject.SetActive(true);
+                bringingObject = false;
+                item = null;
+            }
             gameManager.respawn();
         }
 
