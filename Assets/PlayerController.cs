@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour {
 
         if (collision.gameObject.name == "Respawn Point")
         {
-            GameManager.arriveRitualRoom();
+            gameManager.arriveRitualRoom();
         }
 
     }

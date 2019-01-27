@@ -58,9 +58,13 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public static void arriveRitualRoom()
+    public void arriveRitualRoom()
     {
+        if(!reachedRitualRoom) {
+            ritualRoom.gameObject.transform.Find("Respawn Point").Find("Particle System").GetComponent<ParticleSystem>().Play();
+        }
         reachedRitualRoom = true;
+        
     }
 
     public void respawn() {
