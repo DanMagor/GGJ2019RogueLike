@@ -48,10 +48,10 @@ public class GameManager : MonoBehaviour {
     {
         for (int i=0; i<room.enemies.Count; i++)
         {
-            EnemyBehaviour enemy = room.enemies[i];
+            EnemyBehaviour enemy = room.enemies[i].GetComponent<EnemyBehaviour>();
             if (enemy.startPos != Vector3.zero)
             {
-                enemy.transform.position = enemy.startPos;
+                enemy.gameObject.transform.position = enemy.startPos;
             }
             
             enemy.gameObject.SetActive(false);

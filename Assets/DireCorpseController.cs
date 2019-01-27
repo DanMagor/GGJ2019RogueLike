@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DireCorpseController: MonoBehaviour {
-    public float Speed = 25.0f;
+    public float Speed = 15.0f;
 
     GameObject player;
 
     void Start() {
-        player = GameObject.Find("Player");
+        player = GameObject.FindWithTag("Player");
         lastPlayerPosition = transform.position;
     }
 
