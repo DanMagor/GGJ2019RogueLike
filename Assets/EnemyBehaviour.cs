@@ -5,15 +5,11 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
 
-
-    public float speed = 1;
-
     public PlayerController player;
 
     public GameManager gameManager;
 
     public Vector3 startPos;
-
 
 
     // Use this for initialization
@@ -24,14 +20,4 @@ public class EnemyBehaviour : MonoBehaviour
         startPos = transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (player.gameObject.GetComponent<LanternSwitcher>().LightIsOn())
-        {
-            transform.position += (player.transform.position - transform.position).normalized * speed * Time.deltaTime;
-        }
-
-    }
-  
 }

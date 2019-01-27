@@ -5,7 +5,7 @@ using UnityEngine;
 public class Room : MonoBehaviour {
 
     public Transform playerSpawnLoc;
-    public List<EnemyBehaviour> enemies;
+    public List<GameObject> enemies;
 
 	// Use this for initialization
 	void Start () {
@@ -24,9 +24,9 @@ public class Room : MonoBehaviour {
 
         for (int i = 0; i < enemies.Count; i++)
         {
-            EnemyBehaviour enemy = enemies[i];
+            GameObject enemy = enemies[i];
             //enemy.transform.position = enemy.startPos;
-            enemy.gameObject.SetActive(true);
+            enemy.SetActive(true);
         }
     }
 }
