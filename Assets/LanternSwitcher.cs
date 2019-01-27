@@ -61,6 +61,8 @@ public class LanternSwitcher : MonoBehaviour
             if (batteryCharge < 100)
             {
                 batteryCharge += Time.deltaTime * rechargeRate;
+            } else {
+                batteryCharge = 100.0f;
             }
             
         }
