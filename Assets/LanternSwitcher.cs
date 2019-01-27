@@ -37,14 +37,27 @@ public class LanternSwitcher : MonoBehaviour
         if ( flashlight.activeSelf )
         {
             batteryCharge -= Time.deltaTime * depletionRate;
+            
+            if (batteryCharge <= 10) {
+                int randomNumber = Random.Range(0, 100);
+                if (randomNumber < 50) {
+                    flashlight.GetComponent<Light>().intensity = 0.01f;
+                    lightnessHighlight.GetComponent<Light>().intensity = 0.01f;
+                } else {
+                    flashlight.GetComponent<Light>().intensity = 8.0f;
+                    lightnessHighlight.GetComponent<Light>().intensity = 2.0f;
+                }
+            }
+
             if ( batteryCharge <= 0 )
             {
                 flashlight.SetActive(false);
                 lightnessHighlight.SetActive(false);
                 darknessHighlight.SetActive(true);
             }
-        } else
-        {   
+        } else {   
+            flashlight.GetComponent<Light>().intensity = 8.0f;
+            lightnessHighlight.GetComponent<Light>().intensity = 2.0f;
             if (batteryCharge < 100)
             {
                 batteryCharge += Time.deltaTime * rechargeRate;
