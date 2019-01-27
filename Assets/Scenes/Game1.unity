@@ -4065,6 +4065,11 @@ PrefabInstance:
       propertyPath: batteryScrollbar
       value: 
       objectReference: {fileID: 1868889798}
+    - target: {fileID: 108777978519037354, guid: 39d5fc5f12ac7f14594fa527c3f6d71f,
+        type: 3}
+      propertyPath: m_Range
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39d5fc5f12ac7f14594fa527c3f6d71f, type: 3}
 --- !u!1 &570918928
